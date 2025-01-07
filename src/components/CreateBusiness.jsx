@@ -52,7 +52,7 @@ function CreateBusiness({ onCreate, onClose }) {
         });
 
         try {
-            const res = await axios.post('http://localhost:3000/api/register-business', formDataToSend, {
+            const res = await axios.post('https://serverbrs.onrender.com/api/register-business', formDataToSend, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

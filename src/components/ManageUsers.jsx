@@ -13,7 +13,7 @@ function ManageUsers() {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/api/users');
+                const res = await axios.get('https://serverbrs.onrender.com/api/users');
                 setUsers(res.data);
             } catch (err) {
                 toast.error('Failed to fetch users');
@@ -25,7 +25,7 @@ function ManageUsers() {
 
     const handleUpdateUser = async (updatedUser) => {
         try {
-            const res = await axios.put(`http://localhost:3000/api/users/${updatedUser._id}`, updatedUser, {
+            const res = await axios.put(`https://serverbrs.onrender.com/api/users/${updatedUser._id}`, updatedUser, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -45,7 +45,7 @@ function ManageUsers() {
         const confirmed = window.confirm("Are you sure you want to delete this user?");
         if (confirmed) {
             try {
-                await axios.delete(`http://localhost:3000/api/users/${userId}`);
+                await axios.delete(`https://serverbrs.onrender.com/api/users/${userId}`);
                 setUsers(users.filter(user => user._id !== userId));
                 toast.success('User deleted successfully!');
             } catch (err) {

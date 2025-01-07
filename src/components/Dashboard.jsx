@@ -18,16 +18,16 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const approvedResponse = await axios.get('http://localhost:3000/api/businesses/approved');
+                const approvedResponse = await axios.get('https://serverbrs.onrender.com/api/businesses/approved');
                 setApprovedBusinesses(approvedResponse.data.length);
 
-                const registeredResponse = await axios.get('http://localhost:3000/api/businesses/total');
+                const registeredResponse = await axios.get('https://serverbrs.onrender.com/api/businesses/total');
                 setRegisteredBusinesses(registeredResponse.data.total);
 
-                const rejectedResponse = await axios.get('http://localhost:3000/api/businesses/rejected');
+                const rejectedResponse = await axios.get('https://serverbrs.onrender.com/api/businesses/rejected');
                 setRejectedApplications(rejectedResponse.data.length);
 
-                const usersResponse = await axios.get('http://localhost:3000/api/users');
+                const usersResponse = await axios.get('https://serverbrs.onrender.com/api/users');
                 setRegisteredUsers(usersResponse.data.length);
             } catch (error) {
                 console.error('Error fetching data', error);

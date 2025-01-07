@@ -13,7 +13,7 @@ function RejectedRegistrations() {
     useEffect(() => {
         const fetchRejectedBusinesses = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/api/businesses/rejected');
+                const res = await axios.get('https://serverbrs.onrender.com/api/businesses/rejected');
                 setRejectedBusinesses(res.data);
             } catch (err) {
                 toast.error('Failed to fetch rejected businesses');
@@ -25,7 +25,7 @@ function RejectedRegistrations() {
 
     const handleUpdateBusiness = async (updatedBusiness) => {
         try {
-            const res = await axios.put(`http://localhost:3000/api/businesses/${updatedBusiness._id}`, updatedBusiness, {
+            const res = await axios.put(`https://serverbrs.onrender.com/api/businesses/${updatedBusiness._id}`, updatedBusiness, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -45,7 +45,7 @@ function RejectedRegistrations() {
         const confirmed = window.confirm("Are you sure you want to delete this business?");
         if (confirmed) {
             try {
-                await axios.delete(`http://localhost:3000/api/businesses/${businessId}`);
+                await axios.delete(`https://serverbrs.onrender.com/api/businesses/${businessId}`);
                 setRejectedBusinesses(rejectedBusinesses.filter(business => business._id !== businessId));
                 toast.success('Business deleted successfully!');
             } catch (err) {

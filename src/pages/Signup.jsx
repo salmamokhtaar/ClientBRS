@@ -20,7 +20,7 @@ const Signup = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3000/api/signup', formData);
+      const res = await axios.post('https://serverbrs.onrender.com/api/signup', formData);
       toast.success(res.data.message); // Display success message from the server response
       setFormData({ username: '', email: '', password: '' }); // Clear input fields
     } catch (err) {

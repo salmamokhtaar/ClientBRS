@@ -17,7 +17,7 @@ function ManageBusinesses() {
     useEffect(() => {
         const fetchBusinesses = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/api/businesses');
+                const res = await axios.get('https://serverbrs.onrender.com/api/businesses');
                 setBusinesses(res.data);
             } catch (err) {
                 toast.error('Failed to fetch businesses');
@@ -29,7 +29,7 @@ function ManageBusinesses() {
 
     const handleUpdateBusiness = async (updatedBusiness) => {
         try {
-            const res = await axios.put(`http://localhost:3000/api/businesses/${updatedBusiness._id}`, updatedBusiness, {
+            const res = await axios.put(`https://serverbrs.onrender.com/api/businesses/${updatedBusiness._id}`, updatedBusiness, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -50,7 +50,7 @@ function ManageBusinesses() {
         const confirmed = window.confirm("Are you sure you want to delete this business?");
         if (confirmed) {
             try {
-                await axios.delete(`http://localhost:3000/api/businesses/${businessId}`);
+                await axios.delete(`https://serverbrs.onrender.com/api/businesses/${businessId}`);
                 setBusinesses(businesses.filter(business => business._id !== businessId));
                 toast.success('Business deleted successfully!');
                 addNotification('Business deleted successfully!');
@@ -112,7 +112,7 @@ function ManageBusinesses() {
                                 </td>
                                 <td className="py-2 px-4 border-b">
                                     {business.documents.map((doc, index) => (
-                                        <a key={index} href={`http://localhost:3000/${doc}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                                        <a key={index} href={`https://serverbrs.onrender.com/${doc}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                             Document {index + 1}
                                         </a>
                                     ))}

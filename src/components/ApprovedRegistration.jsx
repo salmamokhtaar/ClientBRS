@@ -13,7 +13,7 @@ function ApprovedRegistration() {
     useEffect(() => {
         const fetchApprovedBusinesses = async () => {
             try {
-                const res = await axios.get('http://localhost:3000/api/businesses/approved');
+                const res = await axios.get('https://serverbrs.onrender.com/api/businesses/approved');
                 setApprovedBusinesses(res.data);
             } catch (err) {
                 toast.error('Failed to fetch approved businesses');
@@ -36,7 +36,7 @@ function ApprovedRegistration() {
         const confirmed = window.confirm("Are you sure you want to delete this business?");
         if (confirmed) {
             try {
-                await axios.delete(`http://localhost:3000/api/businesses/${businessId}`);
+                await axios.delete(`https://serverbrs.onrender.com/api/businesses/${businessId}`);
                 setApprovedBusinesses(approvedBusinesses.filter(business => business._id !== businessId));
                 toast.success('Business deleted successfully!');
             } catch (err) {

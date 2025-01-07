@@ -14,7 +14,7 @@
 //       try {
 //         const token = localStorage.getItem('token'); // Assuming the token is stored in localStorage
 //         if (token) {
-//           const res = await axios.get('http://localhost:3000/api/users/me', {
+//           const res = await axios.get('https://serverbrs.onrender.com/api/users/me', {
 //             headers: {
 //               Authorization: `Bearer ${token}`,
 //             },
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
       try {
         const token = localStorage.getItem('token'); // Assuming the token is stored in localStorage
         if (token) {
-          const res = await axios.get('http://localhost:3000/api/users/me', {
+          const res = await axios.get('https://serverbrs.onrender.com/api/users/me', {
             headers: {
               Authorization: `Bearer ${token}`,
             },

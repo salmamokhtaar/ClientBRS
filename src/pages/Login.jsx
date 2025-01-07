@@ -20,7 +20,7 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3000/api/login', formData);
+      const res = await axios.post('https://serverbrs.onrender.com/api/login', formData);
       toast.success('Login successful!');
       localStorage.setItem('token', res.data.token); // Save the token to localStorage
       setFormData({ email: '', password: '' }); // Clear input fields

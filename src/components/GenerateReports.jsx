@@ -13,7 +13,7 @@ function GenerateReports() {
     const handleGenerateReport = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.get('http://localhost:3000/api/businesses/report', {
+            const res = await axios.get('https://serverbrs.onrender.com/api/businesses/report', {
                 params: {
                     type: reportType,
                     startDate,
